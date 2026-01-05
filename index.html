@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certificate Validation</title>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --border:#e6e9f0;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --blue:#5b6bff;
+      --green:#5aa73b;
+      --green-bg:#f3fbef;
+      --shadow: 0 12px 30px rgba(16,24,40,.10);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+    }
+    .page{
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding: 34px 16px;
+    }
+    .card{
+      width:min(760px, 100%);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 44px 44px;
+    }
+
+    /* Top button */
+    .topbar{
+      display:flex;
+      justify-content:center;
+      margin: 6px 0 22px;
+    }
+    .back-btn{
+      width:min(540px, 100%);
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:14px;
+      padding: 16px 18px;
+      border: 2px solid #d8ddf0;
+      border-radius: 10px;
+      color: var(--blue);
+      background: #fff;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: .2px;
+      user-select:none;
+    }
+    .back-btn .arrow{
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    /* Success banner */
+    .success{
+      margin: 18px auto 26px;
+      width:min(640px, 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      padding: 18px 18px;
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 30px;
+      font-weight: 500;
+    }
+    .success svg{
+      width: 26px;
+      height: 26px;
+      flex: 0 0 auto;
+    }
+
+    /* Broken image placeholder */
+    .img-row{
+      margin: 8px 0 12px;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .broken-img{
+      width: 34px;
+      height: 34px;
+      border-radius: 6px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#98a2b3;
+      font-size: 22px;
+    }
+
+    /* Fields */
+    .fields{
+      margin-top: 10px;
+      max-width: 640px;
+    }
+    .field{
+      margin: 26px 0;
+    }
+    .label{
+      color: var(--muted);
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .value{
+      font-size: 28px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .value.normal{
+      font-weight: 600;
+    }
+
+    /* Small screens */
+    @media (max-width: 520px){
+      .card{ padding: 22px 18px 28px; }
+      .back-btn{ font-size: 20px; }
+      .success{ font-size: 22px; }
+      .label{ font-size: 18px; }
+      .value{ font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <div class="topbar">
+        <div class="back-btn" role="button" tabindex="0" onclick="history.back()">
+          <span class="arrow">←</span>
+          <span>Validate Another Certificate</span>
+        </div>
+      </div>
+
+      <div class="success" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="var(--green)" stroke-width="2" fill="none"></circle>
+          <path d="M7 12.3l3 3L17.5 8.8" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span>Certificate successfully validated</span>
+      </div>
+
+      <div class="img-row">
+        <div class="broken-img" title="image not available">🖼️</div>
+      </div>
+
+      <div class="fields">
+        <div class="field">
+          <div class="label">Award Recipient</div>
+          <div class="value">Kun CAO</div>
+        </div>
+
+        <div class="field">
+          <div class="label">Award Type</div>
+          <div class="value normal">Qualification</div>
+        </div>
+
+        <div class="field">
+          <div class="label">Award</div>
+          <div class="value normal">AUR30620 - Certificate III in Light Vehicle Mechanical Technology</div>
+        </div>
+
+        <div class="field">
+          <div class="label">Award Issuer</div>
+          <div class="value normal">Datum College Pty Ltd (RTO ID: 32243)</div>
+        </div>
+
+        <div class="field">
+          <div class="label">Date Completed</div>
+          <div class="value normal">28/06/2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
