@@ -114,6 +114,12 @@
       justify-content:center;
       gap: 12px;
     }
+    .logo-icon{
+      width: 90px;      /* 控制大小 */
+      height: auto;
+      display: block;
+    }
+
 
     @media (max-width: 520px){
       .card{ padding: 28px 18px 34px; }
@@ -129,12 +135,9 @@
   <div class="page">
     <div class="card">
       <div class="icon-wrap">
-        <svg width="78" height="78" viewBox="0 0 64 64" fill="none">
-          <path d="M14 33.5L26.2 45.7L51 20.9"
-                stroke="var(--green)" stroke-width="8"
-                stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <img src="./logo.png" alt="Logo" class="logo-icon">
       </div>
+
 
       <form class="form" id="validateForm">
         <div class="field">
